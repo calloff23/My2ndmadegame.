@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#intro {
+    text-align: center;
+    padding: 50px;
+    animation: colorChange 2s infinite;
+}
+
+#intro h1, #intro p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#intro button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#gameContainer {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#game {
+    position: relative;
+    height: 80%;
+    background: linear-gradient(to bottom, #87CEEB, #fff);
+}
+
+#stickman {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    width: 30px;
+    height: 60px;
+    background-color: black;
+    border-radius: 50%;
+    animation: runAnimation 0.5s steps(2) infinite;
+}
+
+#block {
+    position: absolute;
+    bottom: 20px;
+    right: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    animation: moveBlock 2s linear infinite;
+}
+
+#controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#jumpBtn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#score {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+#shoutout {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+}
+
+@keyframes colorChange {
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: orange; }
+    75% { color: yellow; }
+    100% { color: green; }
+}
+
+@keyframes runAnimation {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-20deg); }
+}
+
+@keyframes moveBlock {
+    0% { right: -50px; }
+    100% { right: 100%; }
+}
